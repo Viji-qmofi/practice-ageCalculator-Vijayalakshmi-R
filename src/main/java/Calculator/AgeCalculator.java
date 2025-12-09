@@ -3,10 +3,23 @@ import java.util.Scanner;
 
 public class AgeCalculator {
     public static void main(String[] args) {
-        System.out.println("Please enter your age:");
-        Scanner sc=new Scanner(System.in);
-        int age=sc.nextInt();
+        Scanner input = new Scanner(System.in);
 
-    System.out.println("No of years to reach 100 is " + (100 - age));
+
+        System.out.print("Please enter your age: ");
+        if (input.hasNextInt()) {
+            int age = input.nextInt();
+            System.out.println("You have " + (100 - age) + " years left until you are 100 years old.");
+        } else {
+            System.out.println("That's not a valid input. Please enter an integer.");
+            input.next();
+            if (input.hasNextInt()) {
+                int age = input.nextInt();
+                System.out.println("You have " + (100 - age) + " years left until you are 100 years old.");
+            } else {
+                System.out.println("That's not a valid input. Please enter an integer.");
+            }
+        }
+        input.close();
     }
 }
