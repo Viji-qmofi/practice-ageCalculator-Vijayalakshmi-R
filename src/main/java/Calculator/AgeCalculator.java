@@ -6,6 +6,7 @@ public class AgeCalculator {
 
         Scanner input = new Scanner(System.in);
 
+
         int age = 0;  // variable to store valid age
 
         // Keep asking until the user enters an integer
@@ -24,10 +25,9 @@ public class AgeCalculator {
                 input.next();  // clear the invalid input
             }
         }
-
         //Checks unrealistic positive ages
         if (age > 100) {
-            System.out.println("🎉 Congratulations! You lived " + (age - 100) + " extra bonus years!");
+            System.out.println("Congratulations! You lived " + (age - 100) + " extra bonus years!");
         } else {
             System.out.println("You have " + (100 - age) + " years left until you are 100 years old.");
         }
